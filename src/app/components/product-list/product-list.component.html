@@ -1,0 +1,43 @@
+<h2>Products</h2>
+<div class="row">
+  <div *ngFor="let product of Products">
+    <div class="card mb-2 ml-2" style="width: 16.67rem;">
+      <img
+        src="../../../assets/images/car.jpg"
+        class="card-img"
+        style="height: 100%;"
+      />
+      <div class="card-body" style="min-height: 111px;">
+        <h3 class="mb-1">
+          <p class="mb-0" [title]="product.name + ' details'">
+            {{ product.name }}
+          </p>
+        </h3>
+
+        <p
+          style="
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          "
+          class="card-text"
+          *ngIf="product.description"
+        >
+          Description: {{ product.description }}
+        </p>
+      </div>
+
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-6">
+            <p>Fiyat: {{ product.price }} TL</p>
+          </div>
+          <div class="col-sm-6 text-center">
+            <a [routerLink]="['/products/',product.id]" class="card-link">Detayları</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

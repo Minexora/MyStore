@@ -1,0 +1,8 @@
+<h2>Product Details</h2>
+
+<div *ngIf="product">
+  <img class="svg mb-3" src="../../../assets/images/car.jpg"/>
+  <h3><b>Ürün Adı:</b> {{ product.name }}</h3>
+  <h4><b>Fiyatı:</b> {{ product.price | currency: "₺" }}</h4>
+  <p *ngIf="product.description"><b>Açıklama:</b> {{ product.description }}</p>
+</div>
